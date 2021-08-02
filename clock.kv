@@ -1,0 +1,43 @@
+#  widget rules
+#  Root widget
+ClockLayout:
+    orientation: 'vertical'
+    l_time:time
+    RobotoLabels:
+        text:'[i]Clock App[/i]'
+    RobotoLabels:
+        id:time
+        text:''
+    BoxLayout:
+        orientation:'horizontal'
+        size_hint: 1,None
+        height:dp(100)
+        padding: dp(20)
+        spacing: dp(20)
+        RobotoButtons:
+            id:start_button
+            text:'START'
+            on_press:app.start_counting()
+        RobotoButtons:
+            id:stop_button
+            text:'RESET'
+            on_press:app.stop_counting()
+            background_normal:'pngs/red_button_normal.png'
+            background_down:'pngs/red_button_down.png'
+    RobotoLabels:
+        id:s_time
+        text:'00:00.[size=40]00[/size]'
+        markup:True
+
+# class rules / class definition
+<RobotoLabels@Label>:
+    font_name: 'Roboto'
+    font_size:dp(50)
+    markup:True
+<RobotoButtons@Button>:
+    font_name:'Roboto'
+    font_size:dp(15)
+    background_normal:'pngs/button_normal.png'
+    background_down:'pngs/button_down.png'
+    border:3,3,3,3
+
